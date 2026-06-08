@@ -11,8 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 <!-- AOS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
@@ -279,9 +278,10 @@ body.no-cursor .cursor-dot,body.no-cursor .cursor-ring{display:none}
 
 .vform__choice{border:none;padding:6px 0 12px;margin:0}
 .vform__choice legend{font-size:.82rem;font-weight:700;color:var(--ink-soft);margin-bottom:8px}
-.choice{display:inline-flex;align-items:center;gap:8px;margin-right:18px;font-size:.92rem;font-weight:600;cursor:pointer}
+.choice{display:inline-flex;align-items:center;gap:8px;margin-right:18px;font-size:.92rem;font-weight:600;cursor:pointer;color:var(--ink-soft)}
 .choice input{accent-color:var(--blue);width:17px;height:17px}
-.consent{display:flex;gap:10px;font-size:.78rem;color:var(--muted);line-height:1.5;margin:6px 0 18px;cursor:pointer}
+.consent{display:flex;gap:10px;font-size:.78rem;color:var(--ink-soft);line-height:1.5;margin:6px 0 18px;cursor:pointer}
+
 .consent input{margin-top:3px;width:17px;height:17px;flex:none;accent-color:var(--teal)}
 .vform__trust{margin-top:14px;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:7px;justify-content:center}
 .lock{width:13px;height:13px;display:inline-block;background:var(--teal);flex:none;
@@ -422,6 +422,7 @@ body.no-cursor .cursor-dot,body.no-cursor .cursor-ring{display:none}
 }
 
 /* ============ THERAPIES ============ */
+#therapies{padding-top: 0px;}
 .therapies__grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:start}
 .therapies__intro{position:sticky;top:120px}
 .therapies__photo{margin-top:30px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--sh-lg);aspect-ratio:4/3}
@@ -455,6 +456,7 @@ body.no-cursor .cursor-dot,body.no-cursor .cursor-ring{display:none}
 @media(max-width:720px){.conditions__grid{grid-template-columns:1fr}}
 
 /* ============ TREATMENT & CARE ============ */
+#treatment{ padding-top: 0px;}
 .treatment__grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:54px}
 .care-col{border-radius:var(--radius);padding:40px 36px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh-sm)}
 .care-col__title{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:500;color:var(--deep);margin-bottom:24px;
@@ -827,7 +829,7 @@ input:focus-visible {
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
       <a href="#insurance">Insurance</a>
-      <a href="#why">What Makes Us The BEST?</a>
+
       <a href="#programs">Signature Programs</a>
       <a href="#treatment">Treatment Options</a>
       <a href="#amenities">Amenities</a>
@@ -859,13 +861,6 @@ input:focus-visible {
 
   <div class="hero__particles" id="particles" aria-hidden="true"></div>
 
-  <!-- floating glass stat chips -->
-  <div class="hero__float hero__float--a glass" data-parallax-layer="0.05" aria-hidden="true">
-    <strong>Lorem</strong><span>Lorem Ipsum</span>
-  </div>
-  <div class="hero__float hero__float--c glass" data-parallax-layer="0.1" aria-hidden="true">
-    <strong>Ipsum</strong><span>Dolor Sit</span>
-  </div>
 
   <div class="wrap hero__grid">
     <div class="hero__copy">
@@ -897,39 +892,45 @@ input:focus-visible {
     </div>
 
     <!-- Hero insurance verification card -->
-    <aside class="verify-card glass" id="verifyTop" data-aos="fade-up" data-aos-delay="200" data-tilt>
+    <aside class="verify-card glass" id="verify" data-aos="fade-up" data-aos-delay="200" data-tilt>
       <div class="verify-card__head">
         <span class="verify-card__eyebrow">Instant Insurance Verification</span>
         <h2>Enter Patient Information Below</h2>
       </div>
-      <form class="vform" novalidate data-mini>
+      <form class="vform" id="mainForm" novalidate>
         <div class="vform__row">
-          <div class="field"><input type="text" id="fnameT" required /><label for="fnameT">Client First Name *</label></div>
-          <div class="field"><input type="text" id="lnameT" required /><label for="lnameT">Client Last Name *</label></div>
+          <div class="field"><input type="text" id="fname" required /><label for="fname">Client First Name *</label></div>
+          <div class="field"><input type="text" id="lname" required /><label for="lname">Client Last Name *</label></div>
         </div>
         <div class="vform__row">
-          <div class="field"><input type="tel" id="phoneT" required /><label for="phoneT">Phone Number *</label></div>
-          <div class="field"><input type="text" id="dobT" required onfocus="this.type='date'" /><label for="dobT">Client Date of Birth *</label></div>
+          <div class="field"><input type="tel" id="phone" required /><label for="phone">Phone Number *</label></div>
+          <div class="field"><input type="text" id="dob" required onfocus="this.type='date'" /><label for="dob">Client Date of Birth *</label></div>
         </div>
         <div class="vform__row">
-          <div class="field"><input type="text" id="insT" required /><label for="insT">Insurance Provider *</label></div>
-          <div class="field"><input type="text" id="polT" required /><label for="polT">Policy Number / ID *</label></div>
+          <div class="field"><input type="text" id="ins" required /><label for="ins">Insurance Provider *</label></div>
+          <div class="field"><input type="text" id="pol" required /><label for="pol">Policy Number / ID *</label></div>
         </div>
 
         <fieldset class="vform__choice">
           <legend>Looking for help for…</legend>
-          <label class="choice"><input type="radio" name="whoT" value="Myself" /><span>Myself</span></label>
-          <label class="choice"><input type="radio" name="whoT" value="A Loved One" /><span>A Loved One</span></label>
+          <label class="choice"><input type="radio" name="who" value="Myself" /><span>Myself</span></label>
+          <label class="choice"><input type="radio" name="who" value="A Loved One" /><span>A Loved One</span></label>
         </fieldset>
 
         <label class="consent">
-          <input type="checkbox" id="consentT" required />
+          <input type="checkbox" id="consent" required />
           <span>I request and consent to the office of HealingUS Centers communicating with me by phone call. I understand that I may revoke my consent at any time by contacting the office of HealingUS Centers.</span>
         </label>
 
         <button type="submit" class="btn btn--primary btn--block magnetic">Verify Insurance Now</button>
         <p class="vform__trust"><i class="lock"></i> Free &amp; 100% confidential</p>
       </form>
+
+      <div class="vform__success" id="formSuccess" hidden>
+        <div class="vform__check"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="none"/><path fill="none" d="M14 27l8 8 16-16"/></svg></div>
+        <h3>Thank you</h3>
+        <p>Your information has been received. An experienced recovery specialist will contact you shortly. Need help now? Call <a href="tel:8665937132">(866) 593-7132</a>.</p>
+      </div>
     </aside>
   </div>
 </section>
@@ -1115,108 +1116,6 @@ input:focus-visible {
   </div>
 </section>
 
-<!-- ================= RECOVERY JOURNEY TIMELINE (lorem dummy data) ================= -->
-<section class="journey section" id="journey">
-  <div class="journey__aurora" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="section-head center" data-aos="fade-up">
-      <span class="eyebrow eyebrow--light">Lorem Ipsum</span>
-      <h2 class="section-title light">Lorem Ipsum Dolor Sit Amet<br/>Consectetur Adipiscing Elit</h2>
-    </div>
-
-    <div class="timeline" id="timeline">
-      <div class="timeline__progress" id="timelineProgress"></div>
-      <div class="tl-step" data-aos="fade-up">
-        <span class="tl-step__num">01</span>
-        <h3>Lorem Ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-      </div>
-      <div class="tl-step" data-aos="fade-up" data-aos-delay="80">
-        <span class="tl-step__num">02</span>
-        <h3>Dolor Sit</h3>
-        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="tl-step" data-aos="fade-up" data-aos-delay="160">
-        <span class="tl-step__num">03</span>
-        <h3>Amet Consectetur</h3>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-      </div>
-      <div class="tl-step" data-aos="fade-up" data-aos-delay="240">
-        <span class="tl-step__num">04</span>
-        <h3>Adipiscing Elit</h3>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-      </div>
-      <div class="tl-step" data-aos="fade-up" data-aos-delay="320">
-        <span class="tl-step__num">05</span>
-        <h3>Excepteur Sint</h3>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SCROLL SHOWCASE (pinned, lorem dummy data) ================= -->
-<section class="showcase" id="showcase" aria-label="Inside the experience">
-  <div class="showcase__track" id="scTrack">
-    <div class="showcase__sticky">
-      <div class="wrap showcase__inner">
-        <!-- LEFT: switching text panels -->
-        <div class="showcase__left">
-          <span class="eyebrow eyebrow--light">Lorem Ipsum</span>
-          <div class="sc-steps" id="scSteps">
-            <button class="sc-step is-active" data-i="0"><i></i>Lorem Ipsum</button>
-            <button class="sc-step" data-i="1"><i></i>Dolor Sit</button>
-            <button class="sc-step" data-i="2"><i></i>Amet Consectetur</button>
-            <button class="sc-step" data-i="3"><i></i>Adipiscing Elit</button>
-          </div>
-
-          <div class="sc-panels">
-            <article class="sc-panel is-active" data-i="0">
-              <span class="sc-panel__num">01</span>
-              <h2>Lorem ipsum dolor<span class="text-teal"> sit amet consectetur</span></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </article>
-            <article class="sc-panel" data-i="1">
-              <span class="sc-panel__num">02</span>
-              <h2>Consectetur elit<span class="text-teal"> sed do eiusmod tempor</span></h2>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </article>
-            <article class="sc-panel" data-i="2">
-              <span class="sc-panel__num">03</span>
-              <h2>Sed do eiusmod<span class="text-teal"> tempor incididunt ut labore</span></h2>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            </article>
-            <article class="sc-panel" data-i="3">
-              <span class="sc-panel__num">04</span>
-              <h2>Ut labore magna<span class="text-teal"> excepteur sint occaecat</span></h2>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </article>
-          </div>
-
-          <a href="tel:8665937132" class="btn btn--glass btn--lg">Call Now (866) 593-7132</a>
-        </div>
-
-        <!-- RIGHT: switching media -->
-        <div class="showcase__right">
-          <figure class="sc-media is-active" data-i="0">
-            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1100&auto=format&fit=crop" alt="Lorem Ipsum Suite" data-fallback="grad" />
-          </figure>
-          <figure class="sc-media" data-i="1">
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1100&auto=format&fit=crop" alt="Lorem Ipsum Care" data-fallback="grad" />
-          </figure>
-          <figure class="sc-media" data-i="2">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1100&auto=format&fit=crop" alt="Lorem Ipsum Wellness" data-fallback="grad" />
-          </figure>
-          <figure class="sc-media" data-i="3">
-            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1100&auto=format&fit=crop" alt="Lorem Ipsum Support" data-fallback="grad" />
-          </figure>
-          <span class="sc-media__count"><b id="scCount">01</b> / 04</span>
-        </div>
-      </div>
-      <div class="showcase__progress"><i id="scProgress"></i></div>
-    </div>
-  </div>
-</section>
 
 <!-- ================= TRUSTED THERAPIES ================= -->
 <section class="therapies section" id="therapies">
@@ -1299,190 +1198,8 @@ input:focus-visible {
   </div>
 </section>
 
-<!-- ================= WHY CHOOSE US (lorem dummy data) ================= -->
-<section class="why section" id="why">
-  <div class="wrap">
-    <div class="section-head center" data-aos="fade-up">
-      <span class="eyebrow">Lorem Ipsum</span>
-      <h2 class="section-title">Lorem Ipsum Dolor Sit</h2>
-    </div>
-    <div class="why-grid">
-      <article class="why-card glass" data-aos="fade-up" data-tilt>
-        <div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5v6c0 5 3.4 7.7 8 11 4.6-3.3 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Lorem Ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-      </article>
-      <article class="why-card glass" data-aos="fade-up" data-aos-delay="80" data-tilt>
-        <div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.6a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.07a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.85a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        <h3>Dolor Sit Amet</h3>
-        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </article>
-      <article class="why-card glass" data-aos="fade-up" data-aos-delay="160" data-tilt>
-        <div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
-        <h3>Consectetur Elit</h3>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-      </article>
-      <article class="why-card glass" data-aos="fade-up" data-tilt>
-        <div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><path d="M22 21v-1.5a4 4 0 0 0-3-3.87"/></svg></div>
-        <h3>Adipiscing Elit</h3>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-      </article>
-      <article class="why-card glass" data-aos="fade-up" data-aos-delay="80" data-tilt>
-        <div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
-        <h3>Tempor Incididunt</h3>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui.</p>
-      </article>
-      <article class="why-card glass" data-aos="fade-up" data-aos-delay="160" data-tilt>
-        <div class="why-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg></div>
-        <h3>Ut Labore Dolore</h3>
-        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SUCCESS STORIES ================= -->
-<section class="stories section" id="stories">
-  <div class="wrap">
-    <div class="section-head center" data-aos="fade-up">
-      <span class="eyebrow">Success Stories</span>
-      <h2 class="section-title">Real People. Real Recovery.</h2>
-    </div>
-  </div>
-
-  <div class="swiper storiesSwiper">
-    <div class="swiper-wrapper">
-      <!-- Verified testimonial from the live site -->
-      <div class="swiper-slide">
-        <figure class="story glass">
-          <div class="story__stars">★★★★★</div>
-          <blockquote>I give you guys my word when I say they help a lot with recovery, they make you feel at home and welcome. They actually care about you and want you to do better for your life. It was a great experience and I told multiple people about it so they can get their lives back on track like I did! I recommend this place to anyone that needs help with their addiction and mental illness ‘cause it really helped me!</blockquote>
-          <figcaption><span class="story__avatar">SR</span><span><strong>Sean R.</strong><small>Verified Google Review</small></span></figcaption>
-        </figure>
-      </div>
-      <!-- Testimonials made dummy data per instructions -->
-      <div class="swiper-slide">
-        <figure class="story story--placeholder glass">
-          <div class="story__stars">★★★★★</div>
-          <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</blockquote>
-          <figcaption><span class="story__avatar">LI</span><span><strong>Lorem Ipsum</strong><small>Lorem dolor</small></span></figcaption>
-        </figure>
-      </div>
-      <div class="swiper-slide">
-        <figure class="story story--placeholder glass">
-          <div class="story__stars">★★★★★</div>
-          <blockquote>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</blockquote>
-          <figcaption><span class="story__avatar">DS</span><span><strong>Dolor Sit</strong><small>Sit amet</small></span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-
-  <div class="stories__controls">
-    <button class="swiper-button-prev" aria-label="Previous story"></button>
-    <div class="swiper-pagination"></div>
-    <button class="swiper-button-next" aria-label="Next story"></button>
-  </div>
-</section>
-
-<!-- ================= GALLERY ================= -->
-<section class="gallery section" id="gallery">
-  <div class="wrap">
-    <div class="section-head center" data-aos="fade-up">
-      <span class="eyebrow">Inside HealingUS</span>
-      <h2 class="section-title">A Space Designed for Healing</h2>
-    </div>
-    <div class="masonry" id="masonry">
-      <figure class="masonry__item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=900&auto=format&fit=crop" alt="Private recovery suite" data-fallback="grad"/><figcaption>Lorem Ipsum</figcaption></figure>
-      <figure class="masonry__item" data-aos="fade-up" data-aos-delay="60"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900&auto=format&fit=crop" alt="Fitness and wellness center" data-fallback="grad"/><figcaption>Dolor Sit</figcaption></figure>
-      <figure class="masonry__item" data-aos="fade-up" data-aos-delay="120"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=900&auto=format&fit=crop" alt="Group therapy session" data-fallback="grad"/><figcaption>Consectetur</figcaption></figure>
-      <figure class="masonry__item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1661307987465-1db8d7a8796f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fHlvZ2F8ZW58MHx8MHx8fDA%3D" alt="Wellness and yoga space" data-fallback="grad"/><figcaption>Adipiscing</figcaption></figure>
-      <figure class="masonry__item" data-aos="fade-up" data-aos-delay="60"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=900&auto=format&fit=crop" alt="Caring medical professionals" data-fallback="grad"/><figcaption>Tempor</figcaption></figure>
-      <figure class="masonry__item" data-aos="fade-up" data-aos-delay="120"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=900&auto=format&fit=crop" alt="Serene outdoor reflection area" data-fallback="grad"/><figcaption>Incididunt</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ================= IMPACT STATISTICS (lorem dummy data) ================= -->
-<section class="impact section" id="impact">
-  <div class="impact__aurora" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="section-head center" data-aos="fade-up">
-      <span class="eyebrow eyebrow--light">Lorem Ipsum</span>
-      <h2 class="section-title light">Lorem Ipsum Dolor</h2>
-      <p class="section-lead light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-    </div>
-    <div class="impact__grid">
-      <div class="impact__item" data-aos="zoom-in"><span class="stat__num" data-count="10" data-suffix="+">0</span><span class="impact__label">Lorem Ipsum</span></div>
-      <div class="impact__item" data-aos="zoom-in" data-aos-delay="80"><span class="stat__num" data-count="90" data-suffix="+">0</span><span class="impact__label">Dolor Sit</span></div>
-      <div class="impact__item" data-aos="zoom-in" data-aos-delay="160"><span class="stat__num" data-count="14" data-suffix="+">0</span><span class="impact__label">Amet Consectetur</span></div>
-      <div class="impact__item" data-aos="zoom-in" data-aos-delay="240"><span class="stat__num" data-count="100" data-suffix="%">0</span><span class="impact__label">Adipiscing Elit</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= VERIFY / CONTACT ================= -->
-<section class="verify section" id="verify">
-  <div class="wrap verify__grid">
-    <div class="verify__intro" data-aos="fade-right">
-      <span class="eyebrow">Instant Insurance Verification</span>
-      <h2 class="section-title">Free, Confidential Insurance Check<br/><span class="grad-text">in Minutes</span></h2>
-      <p class="section-lead">Your insurance may cover 100% of the cost of treatment. Enter your information and an experienced recovery specialist will reach out — or call our 24/7 admissions line now.</p>
-      <ul class="verify__points">
-        <li><i class="badge-check"></i> Same-day treatment available now</li>
-        <li><i class="badge-check"></i> Accredited by The Joint Commission</li>
-        <li><i class="badge-check"></i> 100% confidential — no obligation</li>
-      </ul>
-      <a href="tel:8665937132" class="btn btn--glass btn--lg">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call Now (866) 593-7132
-      </a>
-    </div>
-
-    <aside class="verify-card verify-card--full glass" data-aos="fade-left">
-      <div class="verify-card__head">
-        <span class="verify-card__eyebrow">Enter Patient Information Below</span>
-        <h2>Verify Insurance Now</h2>
-      </div>
-      <form class="vform" id="mainForm" novalidate>
-        <div class="vform__row">
-          <div class="field"><input type="text" id="fname" required /><label for="fname">Client First Name *</label></div>
-          <div class="field"><input type="text" id="lname" required /><label for="lname">Client Last Name *</label></div>
-        </div>
-        <div class="vform__row">
-          <div class="field"><input type="tel" id="phone" required /><label for="phone">Phone Number *</label></div>
-          <div class="field"><input type="text" id="dob" required onfocus="this.type='date'" /><label for="dob">Client Date of Birth *</label></div>
-        </div>
-        <div class="vform__row">
-          <div class="field"><input type="text" id="ins" required /><label for="ins">Insurance Provider *</label></div>
-          <div class="field"><input type="text" id="pol" required /><label for="pol">Policy Number / ID *</label></div>
-        </div>
-
-        <fieldset class="vform__choice">
-          <legend>Looking for help for…</legend>
-          <label class="choice"><input type="radio" name="who" value="Myself" /><span>Myself</span></label>
-          <label class="choice"><input type="radio" name="who" value="A Loved One" /><span>A Loved One</span></label>
-        </fieldset>
-
-        <label class="consent">
-          <input type="checkbox" id="consent" required />
-          <span>I request and consent to the office of HealingUS Centers communicating with me by phone call. I understand that I may revoke my consent at any time by contacting the office of HealingUS Centers.</span>
-        </label>
-
-        <button type="submit" class="btn btn--primary btn--block btn--lg magnetic">Verify Insurance Now</button>
-        <p class="vform__trust"><i class="lock"></i> Free &amp; 100% confidential insurance verification</p>
-      </form>
-
-      <div class="vform__success" id="formSuccess" hidden>
-        <div class="vform__check"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="none"/><path fill="none" d="M14 27l8 8 16-16"/></svg></div>
-        <h3>Thank you</h3>
-        <p>Your information has been received. An experienced recovery specialist will contact you shortly. Need help now? Call <a href="tel:8665937132">(866) 593-7132</a>.</p>
-      </div>
-    </aside>
-  </div>
-</section>
-
 </main>
+
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer" id="footer">
@@ -1514,7 +1231,7 @@ input:focus-visible {
       <nav class="footer__col" aria-label="Quick links">
         <h4>Quick Links</h4>
         <a href="#insurance">Insurance</a>
-        <a href="#why">What Makes Us The BEST?</a>
+
         <a href="#programs">Signature Programs</a>
         <a href="#treatment">Treatment Options</a>
         <a href="#amenities">Amenities</a>
@@ -1570,7 +1287,6 @@ input:focus-visible {
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
 
@@ -1726,15 +1442,7 @@ input:focus-visible {
         });
       });
 
-      // 2. Aurora drift on dark sections
-      gsap.utils.toArray('.journey__aurora, .impact__aurora').forEach((a) => {
-        gsap.fromTo(a, { yPercent: -8 }, {
-          yPercent: 8, ease: 'none',
-          scrollTrigger: { trigger: a.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
-        });
-      });
-
-      // 3. Image scroll-parallax inside fixed frames (transform-only, clipped)
+      // 2. Image scroll-parallax inside fixed frames (transform-only, clipped)
       gsap.utils.toArray('.therapies__photo, .amenities__img').forEach((frame) => {
         const img = frame.querySelector('img');
         if (!img) return;
@@ -1747,15 +1455,7 @@ input:focus-visible {
         });
       });
 
-      // 4. Floating hero chips drift away on scroll (depth)
-      gsap.utils.toArray('.hero__float').forEach((chip, i) => {
-        gsap.to(chip, {
-          yPercent: (i % 2 === 0 ? -40 : 40), opacity: 0, ease: 'none',
-          scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-        });
-      });
-
-      // 5. Section heading rise-in (subtle)
+      // 3. Section heading rise-in (subtle)
       gsap.utils.toArray('.section-title').forEach((el) => {
         gsap.from(el, {
           y: 28, opacity: 0, duration: .9, ease: 'power3.out',
@@ -1764,77 +1464,8 @@ input:focus-visible {
       });
     }
 
-    // 7. Animated timeline progress line
-    const tl = document.getElementById('timeline');
-    const prog = document.getElementById('timelineProgress');
-    if (tl && prog) {
-      ScrollTrigger.create({
-        trigger: tl, start: 'top 75%', end: 'bottom 60%', scrub: 0.6,
-        onUpdate: (self) => {
-          const horizontal = window.innerWidth > 860;
-          const v = (self.progress * 100).toFixed(1) + '%';
-          if (horizontal) {
-            prog.style.width = (self.progress * 78).toFixed(1) + '%';
-            prog.style.height = ''; // Reset height to default
-          } else {
-            prog.style.height = v;
-            prog.style.width = ''; // Reset width to default
-          }
-        }
-      });
-      gsap.utils.toArray('.tl-step__num').forEach((n, i) => {
-        gsap.from(n, {
-          scale: 0, opacity: 0, duration: .5, ease: 'back.out(1.7)',
-          scrollTrigger: { trigger: n, start: 'top 85%' }, delay: i * 0.04
-        });
-      });
-    }
-
     // keep triggers accurate after images/fonts settle
     window.addEventListener('load', () => ScrollTrigger.refresh());
-
-    // 8. Pinned showcase — switch panels/media by scroll progress
-    const scTrack = document.getElementById('scTrack');
-    if (scTrack) {
-      const panels = document.querySelectorAll('.sc-panel');
-      const medias = document.querySelectorAll('.sc-media');
-      const steps = document.querySelectorAll('.sc-step');
-      const countEl = document.getElementById('scCount');
-      const progEl = document.getElementById('scProgress');
-      const N = panels.length;
-      let current = -1;
-
-      const setActive = (i) => {
-        if (i === current) return;
-        current = i;
-        panels.forEach((p, k) => p.classList.toggle('is-active', k === i));
-        medias.forEach((m, k) => m.classList.toggle('is-active', k === i));
-        steps.forEach((s, k) => s.classList.toggle('is-active', k === i));
-        if (countEl) countEl.textContent = String(i + 1).padStart(2, '0');
-      };
-      setActive(0);
-
-      const st = ScrollTrigger.create({
-        trigger: scTrack, start: 'top top', end: 'bottom bottom', scrub: 1.5,
-        onUpdate: (self) => {
-          const idx = Math.min(N - 1, Math.floor(self.progress * N));
-          setActive(idx);
-          if (progEl) progEl.style.width = (self.progress * 100) + '%';
-        }
-      });
-
-      // click a step -> jump to that segment
-      steps.forEach((s, k) => {
-        s.addEventListener('click', () => {
-          const r = scTrack.getBoundingClientRect();
-          const top = r.top + window.pageYOffset;
-          const seg = scTrack.offsetHeight - window.innerHeight;
-          const y = top + seg * ((k + 0.5) / N);
-          if (lenis) lenis.scrollTo(y, { duration: 1 });
-          else window.scrollTo({ top: y, behavior: 'smooth' });
-        });
-      });
-    }
   }
 
   /* ---------- Animated counters ---------- */
@@ -1860,36 +1491,7 @@ input:focus-visible {
     counters.forEach((c) => io.observe(c));
   } else counters.forEach(animateCount);
 
-  /* ---------- Swiper testimonials (Coverflow) ---------- */
-  if (window.Swiper) {
-    const storiesSwiper = new Swiper('.storiesSwiper', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      initialSlide: 0,
-      loop: true,
-      loopAdditionalSlides: 3,
-      speed: 650,
-      coverflowEffect: { rotate: 0, stretch: 0, depth: 160, modifier: 1.8, slideShadows: false },
-      pagination: { el: '.swiper-pagination', clickable: true }
-    });
 
-    const prevBtn = document.querySelector('.stories__controls .swiper-button-prev');
-    const nextBtn = document.querySelector('.stories__controls .swiper-button-next');
-    if (prevBtn) {
-      prevBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        storiesSwiper.slidePrev();
-      });
-    }
-    if (nextBtn) {
-      nextBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        storiesSwiper.slideNext();
-      });
-    }
-  }
 
   /* ---------- Logo / badge slots: show name text until real image is added ---------- */
   document.querySelectorAll('img[data-fallback="logo"], img[data-fallback="badge"]').forEach((img) => {
@@ -1925,21 +1527,7 @@ input:focus-visible {
     });
   });
 
-  /* ---------- Lightbox ---------- */
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  document.querySelectorAll('.masonry__item img').forEach((img) => {
-    img.closest('.masonry__item').addEventListener('click', () => {
-      if (!img.currentSrc && !img.src) return;
-      lbImg.src = img.currentSrc || img.src;
-      lbImg.alt = img.alt || '';
-      lb.classList.add('open');
-      lb.setAttribute('aria-hidden', 'false');
-    });
-  });
-  const closeLb = () => { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); };
-  lb && lb.addEventListener('click', (e) => { if (e.target === lb || e.target.classList.contains('lightbox__close')) closeLb(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeLb(); closeMenu(); } });
+
 
   /* ---------- Magnetic buttons (rAF-friendly, transform only) ---------- */
   if (!isTouch && !reduce) {
@@ -2006,11 +1594,7 @@ input:focus-visible {
     });
   }
 
-  wireForm(document.querySelector('[data-mini]'), () => {
-    const t = document.getElementById('verify');
-    const yy = t.getBoundingClientRect().top + window.pageYOffset - 60;
-    if (lenis) lenis.scrollTo(yy, { duration: 1.15 }); else window.scrollTo({ top: yy, behavior: 'smooth' });
-  });
+
 
   const mainForm = document.getElementById('mainForm');
   const success = document.getElementById('formSuccess');

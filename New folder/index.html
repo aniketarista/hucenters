@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>HealingUS™ Centers — 5-Star Rehabs for Addiction &amp; Mental Health</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12322a;          /* deep emerald — primary dark */
+    --navy-2:#1a4034;
+    --navy-3:#27564a;
+    --gold:#c6a15b;
+    --gold-light:#e3cd99;
+    --gold-deep:#9f7e38;
+    --cream:#f8f4ec;
+    --cream-2:#efe6d5;
+    --ink:#1d2a25;
+    --muted:#5d6b64;
+    --white:#ffffff;
+    --line:rgba(198,161,91,.35);
+    --shadow:0 24px 60px -24px rgba(18,50,42,.45);
+    --serif:'Playfair Display', Georgia, serif;
+    --sans:'Poppins', -apple-system, sans-serif;
+    --label:'Poppins', sans-serif;
+    --maxw:1240px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;overflow-x:clip;width:100%}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:clip;
+    width:100%;
+    max-width:100%;
+    position:relative;
+  }
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:.2px}
+  h2{font-size:clamp(2rem,4.2vw,3.3rem)}
+  h3{font-size:clamp(1.5rem,2.6vw,2rem)}
+
+  .eyebrow{
+    font-family:var(--label);
+    text-transform:uppercase;
+    letter-spacing:.32em;
+    font-size:.72rem;
+    font-weight:600;
+    color:var(--gold-deep);
+    display:inline-flex;align-items:center;gap:.6rem;
+  }
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
+  .eyebrow.center::after{content:"";width:30px;height:1px;background:var(--gold)}
+  .eyebrow.center{justify-content:center}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    font-family:var(--label);font-weight:600;letter-spacing:.04em;
+    padding:.95rem 1.7rem;border-radius:50px;border:none;cursor:pointer;
+    font-size:.95rem;transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg,var(--gold-light),var(--gold) 55%,var(--gold-deep));
+    color:var(--navy);box-shadow:0 12px 28px -12px rgba(169,133,76,.8);
+  }
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 34px -12px rgba(169,133,76,.95)}
+  .btn-call{
+    background:var(--gold);color:var(--navy);
+  }
+  .btn-outline{
+    background:transparent;border:1.5px solid var(--gold);color:var(--gold-light);
+  }
+  .btn-outline:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}
+  .btn-block{width:100%}
+  .btn-lg{padding:1.15rem 2.2rem;font-size:1.05rem}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:200;
+    background:rgba(13,27,42,.96);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(198,161,91,.22);
+    transition:padding .25s ease, box-shadow .25s ease;
+  }
+  header.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.5)}
+  .nav{
+    display:flex;align-items:center;gap:1.4rem;
+    padding:13px;transition:padding .25s ease;
+  }
+  header.scrolled .nav{padding:9px 0}
+  .logo{display:flex;flex-direction:column;line-height:1;flex:none}
+  .logo .brand{font-family:var(--serif);font-size:1.55rem;color:var(--white);font-weight:700;letter-spacing:.4px}
+  .logo .brand b{color:var(--gold)}
+  .logo .loc{font-family:var(--label);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light);margin-top:4px;font-weight:500}
+  .nav-links{flex:1;display:flex;justify-content:center;gap:1.5rem;align-items:center}
+  .nav-links a{
+    font-family:var(--label);font-size:.78rem;letter-spacing:.02em;color:rgba(255,255,255,.8);
+    text-transform:uppercase;font-weight:500;position:relative;padding:5px 0;white-space:nowrap;
+  }
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--gold);transition:width .3s ease}
+  .nav-links a:hover{color:var(--white)}
+  .nav-links a:hover::after{width:100%}
+  .header-cta{display:flex;align-items:center;gap:.9rem;flex:none}
+  .header-phone{display:flex;flex-direction:column;text-align:right;line-height:1.1}
+  .header-phone span{font-family:var(--label);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light)}
+  .header-phone a{color:var(--white);font-weight:700;font-size:1.05rem;font-family:var(--sans)}
+  .burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--gold-light);display:block;transition:.3s}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;color:var(--white);
+    background:linear-gradient(rgba(10,28,23,.82),rgba(13,38,30,.92)),
+      url('https://d9hhrg4mnvzow.cloudfront.net/hucenters.com/recovery/f4d43072-new-banner-image_11hc0w0000000000000000.jpg') center/cover no-repeat fixed;
+    padding:64px 0 70px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero-copy .eyebrow{color:var(--gold-light)}
+  .hero-copy .eyebrow::before{background:var(--gold)}
+  .hero h1{font-size:clamp(2.4rem,5vw,4rem);margin:18px 0 6px;color:#fff}
+  .hero h1 em{font-style:normal;color:var(--gold-light)}
+  .hero .lead{font-size:1.18rem;font-family:var(--serif);font-weight:500;color:var(--gold-light);margin-bottom:14px}
+  .hero p.sub{color:rgba(255,255,255,.85);font-size:1.02rem;max-width:520px;margin-bottom:26px}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:14px 26px;margin-bottom:30px}
+  .hero-trust div{display:flex;align-items:center;gap:.5rem;font-family:var(--label);font-size:.86rem;letter-spacing:.02em;color:rgba(255,255,255,.92)}
+  .hero-trust svg{flex:none}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .stars{color:var(--gold);letter-spacing:3px;font-size:1.1rem}
+
+  /* ---------- Hero form ---------- */
+  .form-card{
+    background:var(--white);color:var(--ink);border-radius:18px;
+    box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(198,161,91,.4);
+  }
+  .form-head{
+    background:linear-gradient(135deg,var(--navy-2),var(--navy));
+    color:#fff;text-align:center;padding:20px 24px;border-bottom:3px solid var(--gold);
+  }
+  .form-head .ttl{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--gold-light)}
+  .form-head .sttl{font-family:var(--label);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-top:4px}
+  form{padding:22px 24px 24px}
+  .field{margin-bottom:13px}
+  .field label{display:block;font-family:var(--label);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:600}
+  .field input,.field select{
+    width:100%;max-width:100%;min-width:0;padding:.72rem .85rem;border:1.5px solid #e2dccf;border-radius:9px;
+    font-family:var(--sans);font-size:.95rem;background:#fbf9f4;transition:.2s;color:var(--ink);
+  }
+  .field input:focus,.field select:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(198,161,91,.18)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .toggle-group{display:flex;gap:10px;margin-top:4px}
+  .toggle-group input{position:absolute;opacity:0;pointer-events:none}
+  .toggle-group label{
+    flex:1;text-align:center;padding:.6rem;border:1.5px solid #e2dccf;border-radius:9px;cursor:pointer;
+    font-family:var(--label);font-size:.85rem;letter-spacing:.03em;text-transform:none;color:var(--ink);transition:.2s;background:#fbf9f4;margin:0;
+  }
+  .toggle-group input:checked + label{background:var(--navy);color:var(--gold-light);border-color:var(--navy)}
+  .consent{display:flex;gap:8px;align-items:flex-start;margin:14px 0 16px}
+  .consent input{margin-top:4px;flex:none;width:16px;height:16px;accent-color:var(--gold-deep)}
+  .consent p{font-size:.72rem;color:var(--muted);line-height:1.45}
+
+  /* ---------- Generic Section ---------- */
+  section{padding:62px 0}
+  .sec-head{text-align:center;max-width:760px;margin:0 auto 40px}
+  .sec-head h2{margin:14px 0 12px}
+  .sec-head p{color:var(--muted);font-size:1.06rem}
+  .navy{background:var(--navy);color:#fff}
+  .navy .sec-head p{color:rgba(255,255,255,.82)}
+  .navy h2{color:#fff}
+  .navy h2 em,.navy .accent{font-style:normal;color:var(--gold-light)}
+  .cream2{background:var(--cream-2)}
+
+  /* ---------- Best Bar ---------- */
+  .best{background:linear-gradient(135deg,var(--navy),var(--navy-3));padding:44px 0}
+  .best-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 34px;max-width:980px;margin:0 auto}
+  .best-item{display:flex;align-items:center;gap:.7rem;color:#fff;font-family:var(--label);font-weight:500;font-size:.95rem;letter-spacing:.02em}
+  .best-item .ck{flex:none;width:26px;height:26px;border-radius:50%;background:var(--gold);display:grid;place-items:center;color:var(--navy)}
+
+  /* ---------- Insurance ---------- */
+  .ins{text-align:center}
+  .ins h2{max-width:900px;margin:14px auto 14px}
+  .ins p{color:var(--muted);font-size:1.1rem;max-width:640px;margin:0 auto 28px}
+  .ins .logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;max-width:880px;margin:0 auto 30px}
+  .ins .logos .logo-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    display:flex;align-items:center;justify-content:center;padding:16px;min-height:78px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .ins .logos .logo-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -16px rgba(18,50,42,.35)}
+  .ins .logos .logo-card img{max-height:44px;width:auto;max-width:100%;object-fit:contain}
+
+  /* ---------- Program Cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{
+    background:#fff;border-radius:16px;padding:30px 26px;border:1px solid rgba(198,161,91,.28);
+    transition:transform .3s ease, box-shadow .3s ease;position:relative;overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold-light),var(--gold-deep));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .card:hover::before{transform:scaleX(1)}
+  .card .ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:grid;place-items:center;color:var(--gold-light);margin-bottom:16px}
+  .card h3{font-size:1.5rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.97rem}
+
+  /* ---------- Therapies ---------- */
+  .therapy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 30px;max-width:1000px;margin:0 auto}
+  .therapy{display:flex;gap:14px;align-items:flex-start}
+  .therapy .dot{flex:none;width:40px;height:40px;border-radius:11px;background:rgba(198,161,91,.16);border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-deep)}
+  .navy .therapy .dot{background:rgba(198,161,91,.14);border-color:rgba(198,161,91,.4);color:var(--gold-light)}
+  .therapy h4{font-family:var(--label);font-size:1rem;font-weight:600;color:inherit;margin-bottom:2px}
+  .therapy p{font-size:.92rem;color:var(--muted)}
+  .navy .therapy p{color:rgba(255,255,255,.78)}
+
+  /* ---------- Treatment split ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .treat-box{background:#fff;border-radius:16px;padding:34px 32px;border:1px solid rgba(198,161,91,.28);box-shadow:0 18px 40px -28px rgba(13,27,42,.4)}
+  .treat-box .eyebrow{margin-bottom:14px}
+  .treat-box h3{margin-bottom:12px}
+  .treat-box p{color:var(--muted)}
+
+  /* ---------- Amenities + Gallery ---------- */
+  .amen-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:46px;align-items:center}
+  .amen-list{list-style:none;margin-top:22px}
+  .amen-list li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed rgba(198,161,91,.4);font-size:1.02rem;color:var(--ink)}
+  .amen-list li:last-child{border-bottom:none}
+  .amen-list .ck{flex:none;width:24px;height:24px;border-radius:50%;background:var(--gold);display:grid;place-items:center;color:var(--navy);margin-top:2px}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:150px;gap:12px}
+  .gallery a{position:relative;overflow:hidden;border-radius:12px;cursor:pointer;display:block}
+  .gallery a img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .gallery a::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(13,27,42,.45));opacity:0;transition:.3s}
+  .gallery a:hover img{transform:scale(1.08)}
+  .gallery a:hover::after{opacity:1}
+  .gallery .big{grid-column:span 2;grid-row:span 2}
+  .gallery .tall{grid-row:span 2}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(8,16,26,.94);display:none;align-items:center;justify-content:center;z-index:500;padding:30px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:90%;max-height:88vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .lightbox .close{position:absolute;top:24px;right:30px;color:#fff;font-size:2.4rem;cursor:pointer;font-family:var(--serif);line-height:1}
+  .lightbox .nav-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(198,161,91,.9);color:var(--navy);border:none;width:50px;height:50px;border-radius:50%;font-size:1.5rem;cursor:pointer;display:grid;place-items:center}
+  .lightbox .prev{left:24px}.lightbox .next{right:24px}
+
+  /* ---------- Care / Comfort checklists ---------- */
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .check-col{background:rgba(255,255,255,.05);border:1px solid rgba(198,161,91,.3);border-radius:16px;padding:32px 30px}
+  .check-col h3{color:var(--gold-light);margin-bottom:18px}
+  .check-col ul{list-style:none;display:grid;grid-template-columns:1fr;gap:10px}
+  .check-col li{display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,.9);font-size:.95rem}
+  .check-col li svg{flex:none;margin-top:3px;color:var(--gold)}
+
+  /* ---------- Testimonial ---------- */
+  .testi{background:linear-gradient(135deg,var(--cream-2),var(--cream));text-align:center}
+  .testi .quote{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.45;max-width:900px;margin:24px auto 22px;color:var(--navy);font-weight:500}
+  .testi .mark{font-family:var(--serif);font-size:5rem;color:var(--gold);line-height:.4;height:40px}
+  .testi .name{font-family:var(--label);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;font-size:.85rem}
+  .testi .stars{font-size:1.4rem;margin-bottom:6px}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{background:linear-gradient(135deg,var(--navy),var(--navy-3));text-align:center;color:#fff}
+  .cta-band h2{color:#fff;margin-bottom:10px;font-size:clamp(1.6rem,2.6vw,2.35rem)}
+  .cta-band h2 em{font-style:normal;color:var(--gold-light)}
+  .cta-band p{color:rgba(255,255,255,.82);margin-bottom:24px;font-family:var(--label);letter-spacing:.18em;text-transform:uppercase;font-size:.82rem}
+  .cta-band .phone-xl{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;color:var(--gold-light);display:inline-block;margin-bottom:18px}
+
+  /* ---------- Footer ---------- */
+  footer{background:#091522;color:rgba(255,255,255,.6);padding:40px 0 90px;text-align:center}
+  footer .brand{font-family:var(--serif);font-size:1.6rem;color:#fff;margin-bottom:6px}
+  footer .brand b{color:var(--gold)}
+  footer .fnav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin:16px 0 20px}
+  footer .fnav a{font-family:var(--label);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+  footer .fnav a:hover{color:var(--gold-light)}
+  footer small{font-size:.78rem;line-height:1.7;display:block}
+
+  /* ---------- Sticky footer bar ---------- */
+  .sticky-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:300;
+    background:rgba(13,27,42,.98);backdrop-filter:blur(8px);
+    border-top:2px solid var(--gold);
+    transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.8,.2,1);
+    box-shadow:0 -12px 30px -12px rgba(0,0,0,.5);
+  }
+  .sticky-bar.show{transform:translateY(0)}
+  .sticky-inner{max-width:var(--maxw);margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .sticky-inner .txt{display:flex;flex-direction:column;line-height:1.2}
+  .sticky-inner .txt b{font-family:var(--serif);color:var(--gold-light);font-size:1.15rem}
+  .sticky-inner .txt span{font-family:var(--label);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+  .sticky-actions{display:flex;gap:12px}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- mobile slide-down menu (shared) ---------- */
+  .mobile-menu{display:none;flex-direction:column;background:var(--navy-2);border-top:1px solid rgba(198,161,91,.22)}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{padding:14px 22px;color:rgba(255,255,255,.88);font-family:var(--label);letter-spacing:.04em;text-transform:uppercase;font-size:.8rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.07)}
+  .mobile-menu a:last-child{color:var(--gold-light);font-weight:600;border-bottom:none}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:1080px){
+    .nav-links{display:none}
+    .burger{display:flex}
+    .header-cta{margin-left:auto}
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero{background-attachment:scroll}
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .best-grid{grid-template-columns:repeat(2,1fr)}
+  }
+
+  @media(max-width:768px){
+    .wrap{padding:0 18px}
+    section{padding:46px 0}
+    .header-phone{display:none}
+    .nav{gap:.7rem;padding:11px 0}
+    .logo .brand{font-size:1.35rem}
+    .logo .loc{font-size:.55rem;letter-spacing:.2em}
+    .header-cta{gap:.6rem}
+    .header-cta .btn-call{padding:.62rem 1rem;font-size:.82rem}
+    .hero{padding:34px 0 44px}
+    .therapy-grid,.split,.amen-grid,.checks{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}
+    .gallery .big{grid-column:span 2;grid-row:span 1}
+    .gallery .tall{grid-row:span 1}
+    .form-row{grid-template-columns:1fr}
+    footer{padding-bottom:96px}
+  }
+
+  @media(max-width:560px){
+    section{padding:40px 0}
+    .cards,.best-grid{grid-template-columns:1fr}
+    .hero h1{font-size:2.05rem}
+    .hero .lead{font-size:1.02rem}
+    .hero .sub{font-size:.96rem}
+    /* tidy header */
+    .nav{gap:.55rem;padding:10px;}
+    .logo .brand{font-size:1.22rem}
+    .logo .loc{display:none}
+    .header-cta{gap:.5rem}
+    .header-cta .btn-call .lbl{display:none}
+    .header-cta .btn-call{padding:0;width:40px;height:40px;border-radius:50%}
+    .burger{padding:4px}
+    .burger span{width:22px}
+    .gallery{grid-template-columns:1fr;grid-auto-rows:200px}
+    .gallery .big{grid-column:span 1}
+    .form-head .ttl{font-size:1.3rem}
+    .testi .quote{font-size:1.2rem}
+    .cta-band .phone-xl{font-size:2rem}
+  }
+
+  /* ---------- Sticky footer bar (mobile) ---------- */
+  .sticky-actions .short{display:none}
+  .sticky-bar .btn-gold{box-shadow:0 6px 16px -8px rgba(0,0,0,.55)}
+  .sticky-bar .btn-outline{border-width:2px;color:#fff;background:rgba(255,255,255,.05)}
+  .sticky-bar .btn-outline:hover{background:var(--gold);color:var(--navy)}
+  @media(max-width:768px){
+    .sticky-bar{border-top-width:1.5px}
+    .sticky-inner{padding:8px 10px;gap:8px;width:100%}
+    .sticky-inner .txt{display:none}
+    .sticky-actions{width:100%;gap:8px}
+    .sticky-actions .btn{flex:1 1 0;min-width:0;padding:0 .4rem;height:46px;font-size:.9rem;font-weight:600;border-radius:11px;white-space:nowrap}
+    .sticky-actions .full{display:none}
+    .sticky-actions .short{display:inline}
+  }
+  /* iOS safe-area so the bar clears the home indicator */
+  @supports(padding:max(0px)){
+    .sticky-bar{padding-bottom:env(safe-area-inset-bottom)}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <span class="brand">Healing<b>US</b>™</span>
+      <span class="loc">Locations In New Jersey</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#insurance">Insurance</a>
+      <a href="#best">What Makes Us The BEST?</a>
+      <a href="#programs">Signature Programs</a>
+      <a href="#treatment">Treatment Options</a>
+      <a href="#amenities">Amenities</a>
+    </nav>
+    <div class="header-cta">
+      <div class="header-phone">
+        <span>24/7 Admissions Line</span>
+        <a href="tel:8665937132">(866) 593-7132</a>
+      </div>
+      <a href="tel:8665937132" class="btn btn-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+        <span class="lbl">Call Now</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#insurance">Insurance</a>
+    <a href="#best">What Makes Us The BEST?</a>
+    <a href="#programs">Signature Programs</a>
+    <a href="#treatment">Treatment Options</a>
+    <a href="#amenities">Amenities</a>
+    <a href="tel:8665937132">Call (866) 593-7132</a>
+  </div>
+</header>
+
+<!-- ============ HERO + FORM ============ -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">The BEST Rehab Centers Near You</span>
+      <div class="stars">★★★★★</div>
+      <h1>5-Star Rehabs for <em>Addiction &amp; Mental Health</em></h1>
+      <p class="lead">Nationally Recognized For Providing Top-Tier Substance Use &amp; Mental Health Treatment</p>
+      <p class="sub">Begin your healing in a safe, structured environment with 24/7 medical supervision and emotional support.</p>
+      <div class="hero-trust">
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c2a36b" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Same Day Treatment Available</div>
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c2a36b" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Accredited by The Joint Commission</div>
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c2a36b" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Free Confidential Insurance Check</div>
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c2a36b" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Luxury Facilities &amp; Devices Allowed</div>
+      </div>
+      <div class="hero-actions">
+        <a href="tel:8665937132" class="btn btn-gold btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+          Call Now (866) 593-7132
+        </a>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-card" id="verify">
+      <div class="form-head">
+        <div class="ttl">Instant Insurance Verification</div>
+        <div class="sttl">Enter Patient Information Below</div>
+      </div>
+      <form id="leadForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label>Client First Name *</label>
+            <input type="text" name="fname" required placeholder="First name">
+          </div>
+          <div class="field">
+            <label>Client Last Name *</label>
+            <input type="text" name="lname" required placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label>Phone Number *</label>
+            <input type="tel" name="phone" required placeholder="(___) ___-____">
+          </div>
+          <div class="field">
+            <label>Client Date of Birth *</label>
+            <input type="date" name="dob" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label>Insurance Provider *</label>
+            <input type="text" name="provider" required placeholder="e.g. Aetna, Cigna">
+          </div>
+          <div class="field">
+            <label>Policy Number / ID *</label>
+            <input type="text" name="policy" required placeholder="Policy / Member ID">
+          </div>
+        </div>
+        <div class="field">
+          <label>Looking for help for...</label>
+          <div class="toggle-group">
+            <input type="radio" id="for-self" name="helpfor" value="Myself" checked>
+            <label for="for-self">Myself</label>
+            <input type="radio" id="for-loved" name="helpfor" value="A Loved One">
+            <label for="for-loved">A Loved One</label>
+          </div>
+        </div>
+        <div class="consent">
+          <input type="checkbox" id="consent" required>
+          <p>I request and consent to the office of HealingUS Centers communicating with me by phone call. I understand that I may revoke my consent at any time by contacting the office of HealingUS Centers.</p>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block btn-lg">Verify Insurance Now</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT MAKES US THE BEST ============ -->
+<section class="best" id="best">
+  <div class="wrap">
+    <div class="best-grid">
+      <div class="best-item"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Detox + Rehab + Outpatient + Virtual</div>
+      <div class="best-item"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Highest Success Rate in New Jersey</div>
+      <div class="best-item"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Free Confidential Insurance Check</div>
+      <div class="best-item"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Devices Allowed + Luxury Facilities</div>
+      <div class="best-item"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Same Day Treatment Available Now</div>
+      <div class="best-item"><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Accredited by The Joint Commission</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSURANCE ============ -->
+<section class="ins reveal" id="insurance">
+  <div class="wrap">
+    <span class="eyebrow center">In-Network Coverage</span>
+    <h2>Your Insurance May Cover 100% of the Cost of Our High-Quality Treatment Programs</h2>
+    <p>We are in-network with multiple insurance providers for treatment you deserve!</p>
+    <!-- LOGO PLACEHOLDERS: replace each img src with your real logo image path/URL. Keep alt text. -->
+    <div class="logos">
+      <div class="logo-card"><img src="https://hucenters.vercel.app/acaaf0d6-8a780844-e25a-4bb5-8eb5-276d45b8c0a5_105j01m000000000000028%20(1).png" alt="Aetna" loading="lazy"></div>
+      <div class="logo-card"><img src="https://hucenters.vercel.app/1104iul-gray-anthem_104600o000000000000028.png" alt="Cigna" loading="lazy"></div>
+      <div class="logo-card"><img src="https://hucenters.vercel.app/ec4682bd-nyship-logo_105c024000000000000028.png" alt="Blue Cross Blue Shield" loading="lazy"></div>
+      <div class="logo-card"><img src="https://hucenters.vercel.app/1bcje94-gray-cigna_104601h000000000000028.png" alt="UnitedHealthcare" loading="lazy"></div>
+      <div class="logo-card"><img src="https://hucenters.vercel.app/p7k3pq-gray-aetna_103w00q000000000000028.png" alt="Humana" loading="lazy"></div>
+      <div class="logo-card"><img src="https://hucenters.vercel.app/3fd29d82-ins-logo-bluecross%20(1).svg" alt="Optum" loading="lazy"></div>
+      <div class="logo-card"><img src="https://hucenters.vercel.app/ujcbo2-gray-umr_103401o000000000000028.png" alt="Anthem" loading="lazy"></div>
+      <div class="logo-card"><img src="https://hucenters.vercel.app/19tdaxf-gray-highmark_104v016000000000000028.png" alt="Kaiser Permanente" loading="lazy"></div>
+      <div class="logo-card"><img src="https://hucenters.vercel.app/1lxge6b-gray-united-healthcare_104601b000000000000028.png" alt="Magellan Health" loading="lazy"></div>
+      <div class="logo-card"><img src="https://hucenters.vercel.app/singd7-gray-horizon_103n01n000000000000028.png" alt="TRICARE" loading="lazy"></div>
+    </div>
+    <a href="#verify" class="btn btn-gold btn-lg">Verify Insurance Now</a>
+  </div>
+</section>
+
+<!-- ============ SIGNATURE PROGRAMS ============ -->
+<section class="cream2 reveal" id="programs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center">Signature Programs</span>
+      <h2>A Full Continuum of Care</h2>
+      <p>From medically supervised detox to long-term outpatient support, every level of care is delivered in a private, luxurious environment.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6m0 0a4 4 0 100 8 4 4 0 000-8zm0 8v6"/><path d="M5 8a7 7 0 0114 0"/></svg></div>
+        <h3>Drug &amp; Alcohol Detox</h3>
+        <p>Experience 24/7 personalized care in a tranquil, home-like environment with luxury amenities that promote healing.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Inpatient Rehab</h3>
+        <p>Round-the-clock residential treatment in a safe, structured setting designed to immerse you fully in your recovery.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v16"/></svg></div>
+        <h3>Partial Hospitalization (PHP)</h3>
+        <p>Balance therapy and life responsibilities with a structured, flexible program tailored to your schedule.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div>
+        <h3>Intensive Outpatient (IOP)</h3>
+        <p>Maintain your progress with evidence-based care that fits seamlessly into your daily life.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Supportive Housing</h3>
+        <p>Enjoy the perfect mix of structure and comfort in our luxury supportive housing facilities, where you can focus on your recovery with peace of mind.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Outpatient Rehab</h3>
+        <p>Continue building your recovery with expert guidance and supportive therapies for long-term success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUSTED THERAPIES ============ -->
+<section class="navy reveal">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center">Evidence-Based Care</span>
+      <h2>Trusted Therapies. <em>Life-Changing Outcomes.</em></h2>
+      <p>We use advanced, evidence-based treatments to address the root causes of substance use &amp; mental health challenges. Delivered in a private, luxurious environment, our therapies are designed to help you achieve long-lasting recovery.</p>
+    </div>
+    <div class="therapy-grid">
+      <div class="therapy"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></span><div><h4>Individual Counseling</h4><p>One-on-one sessions focused on uncovering personal challenges and creating a clear path to healing.</p></div></div>
+      <div class="therapy"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span><div><h4>Group Therapy</h4><p>Build meaningful connections and share growth in a supportive, intimate setting.</p></div></div>
+      <div class="therapy"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><div><h4>Family Therapy</h4><p>Strengthen relationships and develop lasting support systems for sustained recovery.</p></div></div>
+      <div class="therapy"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 8a7 7 0 11-14 0 7 7 0 0114 0z"/><path d="M12 8v4l2 2"/></svg></span><div><h4>Medication-Assisted Treatment (MAT)</h4><p>A comprehensive approach blending medication and therapy for effective, long-term outcomes.</p></div></div>
+      <div class="therapy"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 12h8"/></svg></span><div><h4>DBT (Dialectical Behavior Therapy)</h4><p>Proven strategies to manage emotions, reduce conflict, and build a life worth living.</p></div></div>
+      <div class="therapy"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span><div><h4>CBT (Cognitive Behavioral Therapy)</h4><p>Transform negative thought patterns and behaviors with evidence-based techniques.</p></div></div>
+      <div class="therapy"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span><div><h4>EMDR</h4><p>Eye Movement Desensitization and Reprocessing — address and heal past trauma through specialized, proven therapy techniques.</p></div></div>
+      <div class="therapy"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></span><div><h4>Life-Skills Training</h4><p>Equip yourself with practical tools to confidently navigate everyday challenges.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TREATMENT OPTIONS ============ -->
+<section class="reveal" id="treatment">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow center">What We Treat</span>
+      <h2>High-Quality Substance Use &amp; Mental Health Treatment</h2>
+    </div>
+    <div class="split">
+      <div class="treat-box">
+        <span class="eyebrow">Substance Use</span>
+        <h3>Drug &amp; Alcohol Addiction</h3>
+        <p>HealingUS Centers has been a haven for healing and recovery for over a decade. Today, we offer treatment for all types of substance use, including alcohol, heroin, opioids, and benzodiazepines.</p>
+      </div>
+      <div class="treat-box">
+        <span class="eyebrow">Mental Health</span>
+        <h3>Co-Occurring Mental Health Conditions</h3>
+        <p>Our mental health programs are designed to support individuals facing conditions such as eating disorders, schizophrenia, depression, anxiety, PTSD, and bipolar disorder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LUXURY AMENITIES + GALLERY ============ -->
+<section class="cream2 reveal" id="amenities">
+  <div class="wrap">
+    <div class="amen-grid">
+      <div>
+        <span class="eyebrow">Five-Star Living</span>
+        <h2>Luxury Amenities Designed to Support Your Healing</h2>
+        <p style="color:var(--muted);margin-top:12px">Every detail of our facilities reflects our commitment to excellence:</p>
+        <ul class="amen-list">
+          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Private, spacious rooms designed for tranquility and privacy.</li>
+          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Gourmet meals crafted to support your nutritional needs.</li>
+          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> State-of-the-art fitness centers for physical wellness.</li>
+          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Thoughtfully curated spaces, including serene outdoor areas for reflection.</li>
+          <li><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span> Personalized concierge services to ensure your experience is seamless and stress-free.</li>
+        </ul>
+      </div>
+      <div class="gallery" id="gallery">
+        <a class="big" data-img="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" alt="Luxury private suite" loading="lazy"></a>
+        <a data-img="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80" alt="Elegant lounge" loading="lazy"></a>
+        <a class="tall" data-img="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=80"><img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80" alt="Spa and wellness" loading="lazy"></a>
+        <a data-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Gourmet dining" loading="lazy"></a>
+        <a data-img="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=80"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=600&q=80" alt="Fitness center" loading="lazy"></a>
+        <a data-img="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80" alt="Comfortable bedroom" loading="lazy"></a>
+        <a data-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Outdoor reflection space" loading="lazy"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARE / COMFORT CHECKLISTS ============ -->
+<section class="navy reveal">
+  <div class="wrap">
+    <div class="checks">
+      <div class="check-col">
+        <h3>Treatment and Care</h3>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> All Facilities Are Private</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Inpatient + Outpatient + Virtual</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Expert Medical Care</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Dual Diagnosis</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Highest Success Rate</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Expert Clinical + Medical Staff</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> CBT / DBT / EMDR Therapies</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Individualized Therapy / Group Therapy</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Relapse Prevention / Aftercare Planning</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Family Program</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Help With Legal Issues</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> FMLA / Short-Term Disability From Work</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> 7 | 14 | 30 | 60 | 90+ Day Programs</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Spravato® (Esketamine) Treatment</li>
+        </ul>
+      </div>
+      <div class="check-col">
+        <h3>Comfort and Support</h3>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> 5-Star Accommodations</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> High-Quality Catered Meals</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Massage / Yoga</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Fitness Center</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Travel Assistance</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Private &amp; Semi-Private Rooms</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Smart TVs in Every Room</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Weekend Outings</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Phone, Tablet, Laptop Access</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> MAT Available</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Nutrition &amp; Physical Health</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section class="testi reveal">
+  <div class="wrap">
+    <div class="mark">&ldquo;</div>
+    <div class="stars">★★★★★</div>
+    <p class="quote">I give you guys my word when I say they help a lot with recovery, they make you feel at home and welcome. They actually care about you and want you to do better for your life. It was a great experience and I told multiple people about it so they can get their lives back on track like I did! I recommend this place to anyone that needs help with their addiction and mental illness 'cause it really helped me!</p>
+    <div class="name">— Sean R.</div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta-band reveal">
+  <div class="wrap">
+    <span class="eyebrow center" style="color:var(--gold-light)">24/7 Admissions Line</span>
+    <h2>Call Now To Speak To An <em>Experienced Recovery Specialist</em></h2>
+    <p>Locations In New Jersey</p>
+    <p style="font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);color:var(--gold-light);font-weight:500;max-width:760px;margin:16px auto 22px;line-height:1.35">Your call is 100% free, confidential, and there's no obligation — take the first step toward lasting recovery today.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="tel:8665937132" class="btn btn-gold btn-lg">Call Now (866) 593-7132</a>
+      <a href="#verify" class="btn btn-outline btn-lg">Verify Insurance Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="brand">Healing<b>US</b>™ Centers</div>
+    <div class="fnav">
+      <a href="#insurance">Insurance</a>
+      <a href="#best">What Makes Us The BEST?</a>
+      <a href="#programs">Signature Programs</a>
+      <a href="#treatment">Treatment Options</a>
+      <a href="#amenities">Amenities</a>
+    </div>
+    <small>Copyright © 2026 HealingUS Centers. All Rights Reserved.</small>
+  </div>
+</footer>
+
+<!-- ============ STICKY FOOTER BAR ============ -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-inner">
+    <div class="txt">
+      <b>Get Help Today</b>
+      <span>24/7 Confidential Admissions</span>
+    </div>
+    <div class="sticky-actions">
+      <a href="tel:8665937132" class="btn btn-gold">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+        <span class="full">Call (866) 593-7132</span><span class="short">Call Now</span>
+      </a>
+      <a href="#verify" class="btn btn-outline"><span class="full">Verify Insurance</span><span class="short">Verify</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+  <span class="close" id="lbClose">&times;</span>
+  <button class="nav-btn prev" id="lbPrev">&#8249;</button>
+  <img src="" alt="Gallery image" id="lbImg">
+  <button class="nav-btn next" id="lbNext">&#8250;</button>
+</div>
+
+<script>
+  /* Header shrink on scroll */
+  const header = document.getElementById('top');
+  const stickyBar = document.getElementById('stickyBar');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 30);
+    /* Sticky footer bar: show only after scrolling down past hero */
+    if (y > 600) stickyBar.classList.add('show');
+    else stickyBar.classList.remove('show');
+    lastY = y;
+  });
+
+  /* Mobile menu */
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  /* Reveal on scroll */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Form (no backend — demo handler) */
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!this.checkValidity()){ this.reportValidity(); return; }
+    alert('Thank you! Connect this form to your CRM / verification endpoint to receive submissions.');
+  });
+
+  /* Gallery lightbox */
+  const gImgs = [...document.querySelectorAll('#gallery a')].map(a => a.dataset.img);
+  let gIndex = 0;
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  function openLb(i){ gIndex = i; lbImg.src = gImgs[i]; lb.classList.add('open'); }
+  function step(d){ gIndex = (gIndex + d + gImgs.length) % gImgs.length; lbImg.src = gImgs[gIndex]; }
+  document.querySelectorAll('#gallery a').forEach((a,i) => a.addEventListener('click', e => { e.preventDefault(); openLb(i); }));
+  document.getElementById('lbClose').addEventListener('click', () => lb.classList.remove('open'));
+  document.getElementById('lbPrev').addEventListener('click', () => step(-1));
+  document.getElementById('lbNext').addEventListener('click', () => step(1));
+  lb.addEventListener('click', e => { if(e.target === lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown', e => {
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') lb.classList.remove('open');
+    if(e.key === 'ArrowLeft') step(-1);
+    if(e.key === 'ArrowRight') step(1);
+  });
+</script>
+</body>
+</html>
